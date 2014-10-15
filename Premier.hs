@@ -12,5 +12,5 @@ table_des_carres = [a^2|a<-[1..]]
 isqrt :: Int -> Int
 isqrt x = length (takeWhile (<= x) table_des_carres)
 
-main = putStrLn (show (prem2' !! 100000))
+main = putStrLn (show (prem'' !! 100000))
 
