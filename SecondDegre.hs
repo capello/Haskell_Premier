@@ -15,6 +15,7 @@ polyFromList _ = error "Un polynome du second degré contient 3 parametres."
 
 resoudre :: Polynome2 -> Solution2Degre
 resoudre (Polynome2 a b c) 
+      | a == 0 = UneSolution { x = (-c)/ b }
       | delta > 0 = DeuxSolution { x1 = ((-b) + (sqrt delta))/(2*a) , x2 = ((-b) - (sqrt delta))/(2*a) }
       | delta == 0 = UneSolution { x = -b/(2*a) }
       | otherwise = None
@@ -28,4 +29,3 @@ main = do
             print $ resoudre $ polyFromList poly
        else
            return ()
-
